@@ -216,13 +216,6 @@ class EPP_Occupation
     $this->soc_code = $soc_code;
 
     $home_url = home_url();
-    if (strpos($_SERVER['HTTP_HOST'], 'jellis-epp-mvp.pantheonsite.io') !== false) {
-      $home_url = str_replace('://', '://marsdd:eppv2@', $home_url);
-    }
-    if (strpos($_SERVER['HTTP_HOST'], 'test-epp-mvp.pantheonsite.io') !== false) {
-      $home_url = str_replace('://', '://marsdd:planextv1@', $home_url);
-    }
-
     $occupations_json = file_get_contents($home_url . '/epp-occupation-details.json');
     $occupations = json_decode($occupations_json);
     $occupation = $occupations->$soc_code;
