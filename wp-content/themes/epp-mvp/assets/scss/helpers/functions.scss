@@ -1,0 +1,8 @@
+@function remCalc($pxSize) {
+  $remSize: $pxSize / ($pxSize * 0 + 1);
+  @return $remSize / 16 * 1rem;
+}
+
+@function percentCalc($target, $container) {
+  @return ($target / $container) * 100%;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1440 121" style="enable-background:new 0 0 1440 121;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;}
+	.st2{opacity:0.2313;}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:url(#Combined-Shape_1_);}
+</style>
+<title>Group 4</title>
+<desc>Created with Sketch.</desc>
+<path class="st0" d="M612-217"/>
+<g>
+	<path class="st1" d="M1157.4,13c-325.3,4-425.5,106-660.5,108C340.2,122.3,174.5,99.8,0,53.3v67.8h1440V74
+		C1366,31.9,1271.8,11.6,1157.4,13z"/>
+	<path class="st1" d="M1136.5,1C801.9,4,753.7,97,489.9,97C314,97,150.7,72.2,0,22.5v30.8c174.5,46.5,340.2,69.1,496.9,67.7
+		c235-2,335.2-104,660.5-108c114.4-1.4,208.6,18.9,282.6,61V44C1352.1,14.3,1251,0,1136.5,1z"/>
+	<path class="st1" d="M1136.5,1C801.9,4,753.7,97,489.9,97C314,97,150.7,72.2,0,22.5v30.8c174.5,46.5,340.2,69.1,496.9,67.7
+		c235-2,335.2-104,660.5-108c114.4-1.4,208.6,18.9,282.6,61V44C1352.1,14.3,1251,0,1136.5,1z"/>
+</g>
+<g id="Desktop" class="st2">
+	<g id="planext_homepage" transform="translate(0.000000, -969.000000)">
+		<g id="Group-4" transform="translate(0.000000, 969.000000)">
+			
+				<linearGradient id="Combined-Shape_1_" gradientUnits="userSpaceOnUse" x1="413.6749" y1="453.7134" x2="414.7356" y2="453.7089" gradientTransform="matrix(1440 0 0 -120.1085 -595746 54555.543)">
+				<stop  offset="0" style="stop-color:#50E3D4"/>
+				<stop  offset="1" style="stop-color:#A288FF"/>
+			</linearGradient>
+			<path id="Combined-Shape" class="st3" d="M1440,44v30c-74-42.1-168.2-62.4-282.6-61c-325.3,4-425.5,106-660.5,108
+				C340.2,122.3,174.5,99.8,0,53.3V22.5C150.7,72.2,314,97,489.9,97c263.8,0,311.9-93,646.6-96C1251,0,1352.1,14.3,1440,44z"/>
+		</g>
+	</g>
+</g>
+</svg>

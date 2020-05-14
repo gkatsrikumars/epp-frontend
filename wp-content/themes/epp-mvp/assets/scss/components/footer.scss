@@ -1,0 +1,265 @@
+/*--------------------------------------------------------------
+FOOTER
+--------------------------------------------------------------*/
+.site-footer-wrap{
+  // background: $primary-colour;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#536dfe+0,6f76fe+60,a888ff+100 */
+  // background: #536dfe; /* Old browsers */
+  // background: -moz-linear-gradient(-45deg, #536dfe 0%, #6f76fe 60%, #a888ff 100%); /* FF3.6-15 */
+  // background: -webkit-linear-gradient(-45deg, #536dfe 0%,#6f76fe 60%,#a888ff 100%); /* Chrome10-25,Safari5.1-6 */
+  // background: linear-gradient(135deg, #536dfe 0%,#6f76fe 60%,#a888ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#536dfe', endColorstr='#a888ff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: $primary-colour;
+  clear: both;
+  position: relative;
+  // z-index: 2;
+}
+
+.site-footer{
+  // background: $primary-colour;
+  color: #fff;
+  padding: 38px 17px 7px;
+  font-size: remCalc(14px);
+  letter-spacing: 0.41px;
+  text-align: center;
+  margin: 0;
+  @media #{$tablet} {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 58px 35px 62px;
+  }
+  ::-moz-selection {
+    color: $accent-green;
+    background: rgba($dark-blue, 0.1);
+  }
+  ::selection {
+    color: $accent-green;
+    background: rgba($dark-blue, 0.1);
+  }
+  // .col-md{
+  //   max-width: 260px;
+  //   &.site-footer__contact{
+  //     // max-width: 290px;
+  //     max-width: none;
+  //   }
+  //   &.site-footer__address{
+  //     max-width: none;
+  //     margin-left: 23px;
+  //   }
+  // }
+  a{
+    color: #fff;
+    &:hover{
+      opacity: 0.6;
+      text-decoration: none;
+    }
+    &.button--outlined-white{
+      opacity: 1;
+    }
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+    li{
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 12px;
+      &.site-footer__phone{
+        font-weight: 400;
+        text-transform: none;
+        margin-bottom: 4px;
+        letter-spacing: 0.47px;
+      }
+      &.site-footer__email{
+        font-weight: 400;
+        letter-spacing: 0.47px;
+        margin: 2px 0 18px;
+      }
+    }
+  }
+
+  &__phone,
+  &__email,
+  &__address p{
+    position: relative;
+    &:before{
+      content: "";
+      display: inline-block;
+      margin-right: 8px;
+      @media #{$tablet} {
+        display: block;
+        position: absolute;
+        top: 7px;
+        left: -28px;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__phone{
+    // &:before{
+    //   width: 14px;
+    //   height: 14px;
+    //   background: url('../img/phone-icon_2x.png') center no-repeat;
+    //   background-size: 14px auto;
+    // }
+  }
+
+  &__email{
+    a{
+      font-weight: 500;
+    }
+    // &:before{
+    //   width: 15px;
+    //   height: 11px;
+    //   background: url('../img/envelope_2x.png') center no-repeat;
+    //   background-size: 15px auto;
+    // }
+  }
+
+  &__address p{
+    line-height: 23px;
+    font-size: remCalc(14px);
+    @media (min-width: 1280px) {
+      margin-top: 2px;
+      position: relative;
+      left: -106px;
+    }
+    // &:before{
+    //   width: 15px;
+    //   height: 19px;
+    //   background: url('../img/map-pin_2x.png') center no-repeat;
+    //   background-size: 15px auto;
+    //   display: none;
+    //   @media #{$tablet} {
+    //     display: block;
+    //   }
+    // }
+  }
+
+  &__menu{
+    list-style: none;
+    float: right;
+    margin-bottom: 0;
+    padding: 0;
+    li{
+      font-size: remCalc(10px);
+      letter-spacing: 0.35px;
+      font-weight: 500;
+      text-transform: uppercase;
+      float: left;
+      padding-top: 0;
+      margin-left: 0;
+      margin-right: 15px;
+      @media #{$mobile} {
+        font-size: remCalc(12px);
+        margin-right: 30px;
+      }
+      @media #{$tablet} {
+        margin-right: 67px;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+      a{
+        color: $grey;
+        color: rgba($dark-blue, 0.34);
+        @media #{$tablet} {
+          &:hover{
+            text-decoration: none;
+            // color: $hover-blue;
+            color: rgba($dark-blue, 0.6);
+          }
+        }
+      }
+    }
+  }
+
+  &__logo{
+    display: none;
+    @media #{$tablet} {
+      display: block;
+      padding: 0;
+    }
+  }
+
+  &__login{
+    @media #{$tablet} {
+      .button--outlined{
+        margin-left: 34px;
+        position: relative;
+        top: -4px;
+        padding: 12px 15px;
+        width: 100px;
+        font-size: remCalc(14px);
+        letter-spacing: 0.39px;
+      }
+    }
+  }
+
+  &__pages{
+    line-height: 34px;
+    @media #{$tablet} {
+      padding-left: 18px;
+    }
+  }
+
+  &__contact{
+    @media (min-width: 1280px) {
+      position: relative;
+      left: -53px;
+    }
+    @media (max-width: 767px){
+      padding-top: 24px;
+      &:before{
+        content: "";
+        display: block;
+        width: 100vw;
+        height: 3px;
+        background: rgba($dark-blue, 0.05);
+        position: absolute;
+        top: 0;
+        left: -17px;
+      }
+    }
+  }
+
+}
+
+.copyright-info{
+  background: #fff;
+  float: left;
+  width: 100%;
+  > div{
+    padding: 20px 17px 20px;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 64px;
+    @media #{$tablet} {
+      padding: 20px 74px 20px 50px;
+    }
+  }
+  p{
+    float: left;
+    font-size: remCalc(14px);
+    font-weight: 500;
+    text-transform: lowercase;
+    margin-bottom: 0;
+    color: $grey;
+    color: rgba($dark-blue, 0.34);
+    @media (max-width: 459px) {
+      font-size: remCalc(12px);
+    }
+    @media (max-width: 767px) {
+      line-height: 26px;
+    }
+  }
+}
+
+// .footer--item__faq{
+//   @media #{$tablet}{
+//     text-indent: 27px;
+//   }
+// }

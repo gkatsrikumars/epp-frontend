@@ -1,0 +1,171 @@
+body{
+  font-family: $body-font;
+  font-size: remCalc(16px);
+  font-weight: 400;
+  line-height: 28px;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: $heading-font;
+}
+
+h1{
+  font-weight: 700;
+  font-size: remCalc(35px);
+  line-height: 49px;
+  letter-spacing: 1px;
+}
+
+h2{
+  font-weight: 500;
+  font-size: remCalc(24px);
+  line-height: 34px;
+}
+
+h3{
+  font-weight: 500;
+  font-size: remCalc(18px);
+  line-height: 25px;
+}
+
+p{
+  font-family: $body-font;
+  font-size: remCalc(16px);
+  font-weight: 400;
+  line-height: 28px;
+}
+
+a{
+  color: $primary-colour;
+  // &:hover{}
+  // &:active{}
+  // &:visited{}
+}
+
+strong{}
+
+em{}
+
+small{}
+
+blockquote{}
+
+ul{}
+
+ol{}
+
+code{}
+
+kbd{}
+
+pre{}
+
+.page-heading{
+  color: $grey;
+  color: rgba($dark-blue, 0.3);
+  line-height: 40px;
+  font-family: $heading-font;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.88px;
+  text-align: center;
+  text-transform: lowercase;
+  margin-bottom: 43px;
+  @media #{$tablet} {
+    font-size: remCalc(40px);
+    letter-spacing: 1px;
+  }
+}
+
+.display-text{
+  font-family: $heading-font;
+  font-size: remCalc(50px);
+  font-weight: 400;
+  line-height: 86px;
+}
+
+.subheading{
+  font-family: $heading-font;
+  font-size: remCalc(30px);
+  font-weight: 400;
+  line-height: 43px;
+}
+
+/*--------------------------------------------------------------
+NEW STYLE GUIDE
+--------------------------------------------------------------*/
+.h1,
+.h2,
+.h3{
+  font-family: $heading-font;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.h1{
+  font-size: remCalc(32px);
+  line-height: 44px;
+  @media #{$tablet} {
+    font-size: remCalc(44px);
+    line-height: 60px;
+  }
+}
+
+.h2{
+  font-size: remCalc(24px);
+  line-height: 34px;
+  @media #{$tablet} {
+    font-size: remCalc(36px);
+    line-height: 40px;
+  }
+}
+
+.h3{
+  font-size: remCalc(20px);
+  line-height: 28px;
+  @media #{$tablet} {
+    font-size: remCalc(24px);
+    line-height: 38px;
+  }
+}
+
+.large-body{
+  // font-family: $body-font;
+  font-weight: 700;
+  font-size: remCalc(20px);
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  @media #{$tablet} {
+    font-size: remCalc(22px);
+    line-height: 38px;
+  }
+}
+
+.medium-body{
+  // font-family: $body-font;
+  font-weight: 700;
+  font-size: remCalc(18px);
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  @media #{$tablet} {
+    line-height: 36px;
+  }
+}
+
+.list-heading{
+  // font-family: $body-font;
+  text-transform: uppercase;
+  font-size: remCalc(14px);
+  letter-spacing: 0.94px;
+}
+
+/* .page-heading{
+  color: $grey;
+  color: rgba($dark-blue, 0.4);
+  text-align: center;
+  text-transform: lowercase;
+} */
+
+.site-name{
+  text-transform: lowercase;
+}

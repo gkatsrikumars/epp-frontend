@@ -1,0 +1,80 @@
+// OPTIONS:
+// =========================
+// gradient | $gradient
+// gradient start | $gr-from
+// gradient stop | $gr-to
+// font-size | $fs
+// font-weight | $fw
+// background | $bg
+// border | $border
+// border-radius | $radius
+// padding | $padding
+// colour | $colour
+// =========================
+
+// @mixin button($gradient: false, $gr-from, $gr-to, $fs: 15px, $fw: 500, $bg: $primary-colour, $border: none, $radius: 30px, $padding: 10px, $colour: #fff) {
+
+//   display: inline-block;
+// 	background: $bg;
+//   padding: $padding;
+//   @include cssBorderRadius($radius);
+//   font-family: $body-font;
+//   font-size: remCalc($fs);
+//   font-weight: $fw;
+//   text-transform: uppercase;
+//   text-align: center;
+//   line-height: 1;
+//   cursor: pointer;
+//   @include cssBorderRadius($radius);
+//   color: $colour;
+// 	border: none;
+	
+// 	@if gradient == true {
+// 		@include cssGradient($gr-from, none, $gr-to, horizontal);
+// 	}
+	
+// }
+
+// button: height 40px
+// button large: height 50px
+// button extra large: height 60px
+// button small: height 30px
+
+/* @mixin button($type: null, $gradient: null, $gr-from: null, $gr-to: null, $fs: 15px, $fw: 500, $bg: $primary-colour, $border: none, $radius: 30px, $padding: 10px, $colour: #fff) {
+
+  display: inline-block;
+	background: $bg;
+  padding: $padding;
+  @include cssBorderRadius($radius);
+  font-family: $body-font;
+  font-size: remCalc($fs);
+  font-weight: $fw;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  @include cssBorderRadius($radius);
+  color: $colour;
+	border: $border;
+
+	@if $type == outlined {
+		background: none;
+	}
+
+	// @else if $type == rectangle {
+	// }
+
+	// @else if $type == small {
+	// }
+
+	// @else if $type == large {
+	// }
+
+	@else if $type == x-large {
+	}
+	
+	@if $gradient != null {
+		@include cssGradient($gr-from, none, $gr-to, horizontal);
+	}
+	
+} */

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="281px" viewBox="0 0 1440 281" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Rectangle</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.15">
+        <g id="dektop:profile" fill="#BC9EFF">
+            <path d="M0,-3 L1440,-3 L1439.0069,281 C1224.49655,228.173104 1062.95172,201.839771 954.372414,202 C686.637122,202.395093 429.972347,279 269.131034,279 C154.593103,279 64.8827586,259.666667 0,221 L0,-3 Z" id="Rectangle"></path>
+        </g>
+    </g>
+</svg>

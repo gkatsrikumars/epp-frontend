@@ -1,0 +1,51 @@
+// @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Roboto:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import url("https://use.typekit.net/xdg4xmj.css");
+
+$body-font-colour: #3e3e3e;// default body font colour
+$white: #fff;
+$black: #000;
+
+// PRIMARY COLOURS:
+$primary-colour: #536DFE;
+$light-blue: #8F9BFF;
+$dark-blue2: #0043CA;
+$hover-blue: #2949FA;
+
+// ACCENT COLOURS:
+$accent-purple: #BC9EFF;
+$accent-green: #64FFDA;
+
+// NEUTRALS:
+$dark-blue: #1C2751;
+
+// DATA VISUALIZATION:
+
+// ERROR HANDLING:
+$success: #50E3AF;
+$error: #F86D6B;
+$warning: #F8BA6B;
+
+$blue: #4171DD;
+$purple: #8063D4;
+$grey: #979BA3;
+$pink: #F06292;
+
+// PATHWAY COLOURS:
+$pathway-green: #50E3D4;
+$pathway-purple: #A888FF;
+$pathway-pink: #F06292;
+// $pathway-blue: #50E3D4;
+
+// FONTS:
+// font-family: 'Roboto', sans-serif;
+// $heading-font: 'Poppins', sans-serif;
+$heading-font: sofia-pro, sans-serif;
+$body-font: 'Roboto', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+
+// MEDIA QUERIES:
+$mobile: '(min-width: 460px)';
+$tablet: '(min-width: 768px)';
+$desktop: '(min-width: 992px)';
+$desktop-xl: '(min-width: 1200px)';
+// @media #{$desktop} {}

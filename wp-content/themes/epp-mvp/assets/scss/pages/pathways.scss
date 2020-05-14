@@ -1,0 +1,1683 @@
+/* body.page-template-page-pathways{
+  @media (min-width: 1080px) {
+    overflow-x: auto;
+    #page-wrapper{
+      overflow-x: auto;
+    }
+  }
+} */
+
+.container--pathways{
+  max-width: 1390px;
+  // min-width: 1390px;
+  margin-top: 60px;
+  padding-top: 107px;
+  padding-bottom: 85px;
+  @media #{$desktop} {
+    margin-top: 80px;
+    min-height: calc(100vh - 375px);
+  }
+  .col-md-3{
+    @media #{$tablet} {
+      flex: 0 0 25%;
+      // max-width: 24%;
+      max-width: 22%;
+      // padding-left: 4px;
+      // padding-top: 8px;
+      padding: 17px 0 0;
+    }
+  }
+  .page-heading{
+    margin-bottom: 74px;
+  }
+}
+
+// .action-btns{}
+
+.pathways{
+
+  &__actions{
+    width: 100%;
+    float: left;
+    @media (min-width: 768px) and (max-width: 991px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    > div{
+      &.viewing-current-path{
+        max-width: 1320px;
+      }
+    }
+  }
+
+  &__name-current-path{
+    float: left;
+    &.initial-state{
+      float: none;
+      text-align: center;
+    }
+    span{
+      display: inline-block;
+      font-size: remCalc(22px);
+      font-weight: 500;
+      color: rgba($dark-blue, 0.6);
+      text-transform: lowercase;
+      letter-spacing: 0.61px;
+      line-height: 40px;
+    }
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+
+  &__name--edit-btn{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url('../img/pencil-edit_2x.png') center no-repeat;
+    background-size: 15px;
+    text-indent: -9999px;
+    overflow: hidden;
+    margin-left: 7px;
+    &:hover{
+      opacity: 0.7;
+    }
+  }
+
+  &__actions-btns{
+    float: right;
+    @media #{$tablet} {
+      &.empty-occ{
+        display: none;
+      }
+    }
+  }
+  
+  &__action-btn{
+    min-width: 124px;
+    border: 1px solid $primary-colour;
+    margin-left: 3px;
+    @media #{$tablet} {
+      &:hover{
+        color: #fff;
+        background: $primary-colour;
+      }
+      &.button{
+        &:hover{
+          background: $hover-blue;
+        }
+      }
+    }
+  }
+
+}
+
+.pathway{
+
+  &__group{
+
+    &--start{
+      .jobs-link{
+        display: block;
+      }
+    }
+    
+    &--2{
+      .pathway__occupation{
+        &:before{
+          background: rgba($pathway-green, 0.3);
+        }
+        &:after{
+          border-left: 30px solid #DCDBFF;
+        }
+        &.selected,
+        &.active,
+        &.expanded{
+          &:before{
+            background: $pathway-green;
+          }
+          .pathway__occupation-btn{
+            @include button();
+            background: $pathway-green;
+            padding: 11px 18px;
+            font-size: remCalc(11px);
+            &:hover{
+              @include button(gradient, $pathway-green, $pathway-purple);
+              padding: 11px 18px;
+              font-size: remCalc(11px);
+            }
+          }
+        }
+        &.active{
+          .pathway__occupation-btn{
+            display: none;
+          }
+        }
+      }
+      .pathway__occupation-btn{
+        border-color: rgba($pathway-green, 0.6);
+        &:hover{
+          border-color: $pathway-green;
+        }
+      }
+    }
+    
+    &--3{
+      .pathway__occupation{
+        &:before{
+          background: rgba($pathway-purple, 0.3);
+        }
+        &:after{
+          border-left: 30px solid #FDE3EC;
+        }
+        &.selected,
+        &.active,
+        &.expanded{
+          &:before{
+            background: $pathway-purple;
+          }
+          .pathway__occupation-btn{
+            @include button();
+            background: $pathway-purple;
+            padding: 11px 18px;
+            font-size: remCalc(11px);
+            &:hover{
+              @include button(gradient, $pathway-purple, $pathway-pink);
+              padding: 11px 18px;
+              font-size: remCalc(11px);
+            }
+          }
+        }
+        &.active{
+          .pathway__occupation-btn{
+            display: none;
+          }
+        }
+      }
+      .pathway__occupation-skill-overlap{
+        color: $pathway-green;
+      }
+      .pathway__occupation-btn{
+        border-color: rgba($pathway-purple, 0.6);
+        &:hover{
+          border-color: $pathway-purple;
+        }
+      }
+    }
+
+    &--4{
+      .pathway__occupation{
+        &:before{
+          background: rgba($pink, 0.3);
+        }
+        &.selected,
+        &.active,
+        &.expanded{
+          &:before{
+            background: $pink;
+          }
+          &:after{
+            opacity: 0;
+          }
+          .pathway__occupation-title{
+            font-weight: 700;
+          }
+          .jobs-link{
+            display: block;
+          }
+          .pathway__occupation-btn{
+            @include button();
+            background: $pathway-purple;
+            padding: 11px 18px;
+            font-size: remCalc(11px);
+            display: none;
+            &:hover{
+              @include button(gradient, $pathway-pink, $primary-colour);
+              padding: 11px 18px;
+              font-size: remCalc(11px);
+            }
+          }
+        }
+        &.active{
+          .pathway__occupation-btn{
+            display: none;
+          }
+        }
+      }
+      .pathway__occupation-skill-overlap{
+        color: $pathway-purple;
+      }
+      .pathway__occupation-btn{
+        border-color: rgba($pathway-pink, 0.6);
+        &:hover{
+          border-color: $pathway-pink;
+        }
+      }
+    }
+
+    &.has-active{
+      min-width: 360px;
+      padding-left: 0;
+    }
+
+  }
+
+  &__occupation{
+    width: 100%;
+    max-width: 300px;
+    height: 146px;
+    float: left;
+    background: #fff;
+    @include cssBorderRadius(8px 0 0 8px);
+    @include cssDropShadow(0, 2px, 5px, #D5D6DF, 0.5);
+    // margin-bottom: 14px;
+    // margin-top: 9px;
+    margin-bottom: 14px;
+    padding: 0 15px 15px 25px;
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    @include transitionMultiple(top 0.3s ease-in-out, opacity 0.3s ease-in-out, left 0.3s ease-in-out);
+    z-index: 2;
+    transform: translate3d(0,0,0);
+    &:before{
+      content: "";
+      display: block;
+      width: 10px;
+      height: 100%;
+      background: $primary-colour;
+      @include cssBorderRadius(8px 0 0 8px);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &:after{
+      content: "";
+      // display: block;
+      width: 0;
+      height: 0;
+      border-top: 73px solid transparent;
+      border-left: 30px solid #CAF6F2;
+      border-bottom: 73px solid transparent;
+      position: absolute;
+      top: 0;
+      right: -30px;
+      display: none;
+    }
+
+    .jobs-link{
+      font-size: remCalc(12px);
+      color: #FF8A65;
+      letter-spacing: 0.44px;
+      text-transform: uppercase;
+      float: left;
+      margin-top: 16px;
+      display: none;
+    }
+
+    .pathway__plus-btn
+    .pathway__divider{
+      display: none;
+    }
+
+    .pathway__plus-btn{
+      cursor: pointer;
+    }
+
+    &.selected{
+      animation: selectedPop 0.4s ease;
+      @include cssDropShadow(0, 2px, 5px, #C3C5D5, 1);
+    }
+
+    &.active,
+    &.expanded{
+      @include cssDropShadow(0, 2px, 5px, #C3C5D5, 1);
+      &:after{
+        display: block;
+      }
+      .pathway__occupation-title{
+        font-weight: 700;
+      }
+      .pathway__occupation-automation{
+        margin-top: 3px;
+      }
+      .pathway__occupation-btn{
+        display: none !important;
+      }
+      .jobs-link{
+        display: block;
+      }
+    }
+
+    &.active{
+      .pathway__collapsed-occupations{
+        display: block;
+      }
+    }
+
+    &--start{
+      height: 150px;
+      &:after{
+        border-top: 75px solid transparent;
+        border-bottom: 75px solid transparent;
+      }
+      &.active{
+        .pathway__occupation-automation{
+          margin-top: 12px;
+        }
+        .pathway__start-path-btn{
+          // padding: 0;
+          width: 126px;
+          height: 34px;
+          // position: relative;
+          left: 15px;
+          margin-top: 13px;
+          margin-right: 16px;
+          padding: 12px 15px 10px;
+          /* span{
+            background: #fff;
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+            padding: 11px 15px;
+            @include cssBorderRadius(30px);
+            color: $primary-colour;
+          }
+          .gradient-border{
+            display: block;
+          } */
+          &:before,
+          &:after{
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            // opacity: 0;
+            @include transitionAll(0.3s, ease-in-out);
+          }
+          &:before{
+            content: "";
+            top: 0;
+            left: 0;
+            @include cssGradient($primary-colour, none, $pathway-green, horizontal);
+            text-transform: uppercase;
+            color: #fff;
+            z-index: 1;
+            @include cssBorderRadius(30px);
+          }
+          &:after{
+            content: "Start new path";
+            // max-width: 228px;
+            // max-height: 46px;
+            max-width: calc(100% - 2px);
+            max-height: calc(100% - 2px);
+            color: $primary-colour;
+            background: #fff;
+            top: 1px;
+            left: 1px;
+            z-index: 2;
+            @include cssBorderRadius(30px);
+            padding: 11px 15px 10px;
+          }
+          &:hover{
+            color: #fff;
+            &:before,
+            &:after{
+              opacity: 0;
+            }
+          }
+          &.initial-state{
+            padding: 12px 16px 11px;
+            background: $primary-colour;
+            &:before,
+            &:after{
+              opacity: 0;
+            }
+            &:hover{
+              @include button(gradient, $primary-colour, $pathway-green);
+              padding: 12px 16px 11px;
+              font-size: remCalc(11px);
+            }
+            span{
+              padding: 0;
+              color: #fff;
+              background: none;
+            }
+            .gradient-border{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    [class*="button--gradient"]{
+      color: #fff;
+      padding: 10px 18px 9px;
+    }
+  }
+
+  &__occupation-skill-overlap{
+    display: block;
+    font-style: normal;
+    font-size: remCalc(12px);
+    font-weight: 500;
+    letter-spacing: 0.32px;
+    color: $primary-colour;
+    text-transform: lowercase;
+    line-height: 1;
+    margin: 9px 0 -1px;
+  }
+
+  &__occupation-title{
+    display: block;
+    margin-bottom: 1px;
+    color: $dark-blue;
+  }
+
+  &__occupation-automation,
+  &__occupation-salary{
+    float: left;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  &__label{
+    display: block;
+    float: left;
+    font-size: remCalc(14px);
+    text-transform: lowercase;
+    letter-spacing: 0.38px;
+    line-height: 1rem;
+    color: #6E7694;
+  }
+
+  &__value{
+    display: block;
+    float: right;
+    font-size: remCalc(14px);
+    // letter-spacing: 0.38px;
+    line-height: 1rem;
+    color: $dark-blue;
+  }
+
+  &__occupation-btn{
+    @include button($type: outlined);
+    display: block;
+    // clear: both;
+    float: right;
+    margin-top: 13px;
+    font-size: remCalc(11px);
+    padding: 11px 25px 10px;
+  }
+
+  &__start-path-btn{
+    padding: 11px;
+    display: block;
+    float: right;
+    margin-top: 12px;
+    position: relative;
+    font-size: remCalc(11px);
+    &.attention-bounce{
+      animation: selectedPop 1s infinite ease-in-out;
+    }
+  }
+
+  &__collapsed-occupations{
+    // display: block;
+    width: 354px;
+    height: 30px;
+    position: absolute;
+    left: -28px;
+    bottom: -30px;
+    background: url('../img/pathways/box-collapsed-bottom-clipped_2x.png') left 15px bottom 0 no-repeat;
+    background-size: 354px 30px;
+    display: none;
+  }
+
+  &__expand-btn,
+  &__collapse-btn{
+    font-size: remCalc(14px);
+    font-weight: 500;
+    color: $grey;
+    color: rgba($dark-blue, 0.4);
+    letter-spacing: 0.51px;
+    text-transform: uppercase;
+    position: absolute;
+    top: -11px;
+    left: 246px;
+    display: none;
+  }
+
+  &__collapse-btn{
+    left: 228px;
+  }
+
+}
+
+.view-active-pathway{
+  &.active{
+    font-size: 0;
+    &:after{
+      content: "Expand Path";
+      font-size: remCalc(12px);
+    }
+  }
+}
+
+.start-new-path-form{
+  padding-top: 10px;
+  @media #{$tablet} {
+    position: relative;
+  }
+}
+
+input.input__start-new-path{
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #C3C5D5;
+  font-weight: 700;
+  font-size: 1rem;
+  color: $dark-blue;
+  letter-spacing: 0.44px;
+  height: 36px;
+  // background: url('../img/search-grey_2x.png') right center no-repeat, #fff;
+  // background-size: 20px 21px;
+  background: #fff;
+  padding-right: 25px;
+  &:focus{
+    // background: url('../img/search-grey_2x.png') right center no-repeat, #fff;
+    // background-size: 20px 21px;
+    background: #fff;
+    border-bottom: 1px solid $primary-colour;
+  }
+}
+
+// input.input__start-new-path--mobile{
+//   background: #fff;
+//   &:focus{
+//     background: #fff;
+//   }
+// }
+
+// input.input__start-new-path--mobile{
+//   position: relative;
+// }
+
+.gradient-border{
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  @include cssGradient($primary-colour, none, $pathway-green, horizontal);
+  @include cssBorderRadius(30px);
+  display: none;
+}
+
+#start-pathway-autocomplete-container{
+  max-width: 100%;
+  // .ui-autocomplete{
+    // max-width: 260px;
+  // }
+  @media (max-width: 767px) {
+    ul{
+      // max-width: calc(100vw - 87px) !important;
+      max-width: calc(100% - 60px) !important;
+      @include cssBoxShadow(0, 2px, 4px, 0, #000, 0.2);
+    }
+  }
+}
+
+.no-pathway-results{
+  font-size: remCalc(14px);
+}
+
+.is-last{
+  .pathway__occupation.active:after,
+  .pathway__occupation.expanded:after{
+    display: none !important;
+  }
+}
+
+.loading{
+  width: 50px;
+  height: 50px;
+  @include cssBorderRadius(50%);
+  animation: growAndShrink 1.8s infinite linear;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px auto auto -25px;
+  z-index: 1;
+  opacity: 0;
+
+  &--mobile{
+    width: 30px;
+    height: 30px;
+    // border-radius: 50%;
+    position: static;
+    top: 0;
+    left: 0;
+    margin: 20px auto 0;
+    // animation: growAndShrink 1.8s infinite linear;
+    // overflow: hidden;
+    opacity: 1;
+    @media #{$tablet} {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  &__square{
+    width: 250px;
+    height: 250px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#dc1e5b+0,7f52fc+33,00d1bb+66,536dfe+100 */
+    background: #dc1e5b; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #dc1e5b 0%, #7f52fc 33%, #00d1bb 66%, #536dfe 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #dc1e5b 0%,#7f52fc 33%,#00d1bb 66%,#536dfe 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #dc1e5b 0%,#7f52fc 33%,#00d1bb 66%,#536dfe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc1e5b', endColorstr='#536dfe',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    animation: moveDiagonally 4s infinite ease;
+  }
+}
+
+.start-new-path{
+  &__search{
+    // display: block;
+    width: 35px;
+    height: 35px;
+    background: url('../img/pathways/mobile/search-blue-circle_2x.png') center no-repeat;
+    background-size: 35px;
+    position: absolute;
+    top: 19px;
+    left: -13px;
+    display: none;
+    @media #{$tablet} {
+      top: 14px;
+      left: -41px;
+    }
+  }
+  &__clear{
+    display: block;
+    width: 21px;
+    height: 21px;
+    background: url('../img/search-grey_2x.png') right center no-repeat;
+    background-size: 20px 21px;
+    position: absolute;
+    top: 24px;
+    right: 31px;
+    @media #{$tablet} {
+      top: 17px;
+      // right: 16px;
+      right: 0;
+    }
+    text-indent: 9999px;
+    overflow: hidden;
+    z-index: 3;
+    // display: none;
+    &.focused{
+      background: url('../img/delete-x-blue_2x.png') right center no-repeat;
+      background-size: 19px;
+    }
+  }
+}
+
+.pathway__progress-wrap{
+  padding: 0;
+}
+
+.pathway__progress {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 27px;
+  margin-bottom: 37px;
+  // counter-reset: step;
+  li {
+    list-style-type: none;
+    width: 25%;
+    max-height: 30px;
+    // float: left;
+    // font-size: 12px;
+    font-size: 0;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    color: #7d7d7d;
+    line-height: 30px;
+    display: none;
+    &:before {
+      content: "";
+      width: 30px;
+      height: 30px;
+      // width: 28px;
+      // height: 28px;
+      // content: counter(step);
+      // counter-increment: step;
+      // line-height: 27px;
+      border: 2px solid #7d7d7d;
+      display: block;
+      text-align: center;
+      // margin: 0 auto 10px auto;
+      margin: 2px auto 0;
+      border-radius: 50%;
+      background-color: white;
+      position: relative;
+      // top: 2px;
+      z-index: 2;
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 4px;
+      position: absolute;
+      background-color: #7d7d7d;
+      top: 15px;
+      left: -50%;
+      // z-index: -1;
+    }
+    &.selected,
+    &.active{
+      display: inline-block;
+    }
+    &.selected{
+      &:after{
+        animation: growToFullWidth 0.8s forwards ease-in-out;
+      }
+    }
+    &.active {
+      // color: green;
+      &:before {
+        // border-color: #55b776;
+        width: 28px;
+        height: 28px;
+        @include cssBoxShadow(0, 2px, 4px, 0, #000, 0.5);
+        animation: pop 0.4s ease;
+      }
+    }
+    &.step1{
+      &:before{
+        // background: $primary-colour;
+        border-color: $primary-colour;
+        background: url('../img/pathways/checkmark_2x.png') center no-repeat, $primary-colour;
+        background-size: 18px 13px;
+      }
+      &:after {
+        content: none;
+      }
+    }
+    &.step2{
+      &:before{
+        border-color: $pathway-green;
+      }
+      &:after{
+        @include cssGradient(#536DFE, none, $pathway-green, horizontal);
+      }
+      &.active{
+        &:before{
+          background: url('../img/pathways/checkmark_2x.png') center no-repeat, $pathway-green;
+          background-size: 18px 13px;
+        }
+      }
+    }
+    &.step3{
+      &:before{
+        border-color: #A888FF;
+      }
+      &:after{
+        @include cssGradient($pathway-green, none, #A888FF, horizontal);
+      }
+      &.active{
+        &:before{
+          background: url('../img/pathways/checkmark_2x.png') center no-repeat, #A888FF;
+          background-size: 18px 13px;
+        }
+      }
+    }
+    &.step4{
+      &:before{
+        border-color: $pathway-pink;
+      }
+      &:after{
+        @include cssGradient(#A888FF, none, $pathway-pink, horizontal);
+      }
+      &.active{
+        &:before{
+          background: url('../img/pathways/checkmark_2x.png') center no-repeat, $pathway-pink;
+          background-size: 18px 13px;
+        }
+      }
+    }
+  }
+}
+
+@media #{$desktop} {
+  .current-path-holder{
+    // display: block !important;
+    margin-top: 27px;
+    .pathway__occupation{
+      .jobs-link{
+        display: block;
+      }
+      &--2{
+        &:before{
+          background: $pathway-green;
+        }
+        &:after{
+          border-left: 30px solid #DCDBFF;
+        }
+      }
+      &--3{
+        &:before{
+          background: $pathway-purple;
+        }
+        &:after{
+          border-left: 30px solid #FDE3EC;
+        }
+      }
+      &--4{
+        &:before{
+          background: $pathway-pink;
+        }
+      }
+    }
+    .col.has-1-occs{
+      max-width: 334px;
+    }
+    .col.has-2-occs{
+      max-width: 672px;
+      .pathway__occupation{
+        &--1{
+          margin-right: 40px;
+          &:after{
+            display: block;
+          }
+        }
+      }
+    }
+    .col.has-3-occs{
+      max-width: 1012px;
+      .pathway__occupation{
+        &--1,
+        &--2{
+          margin-right: 40px;
+          &:after{
+            display: block;
+          }
+        }
+      }
+    }
+    .col.has-4-occs{
+      max-width: 100%;
+      .pathway__occupation{
+        &--1,
+        &--2,
+        &--3{
+          margin-right: 40px;
+          &:after{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.current-path-holder.visible{
+  display: flex;
+}
+
+.modal--name-your-pathway{
+  // .modal-header{
+  //   background: none;
+  //   border-bottom: 1px solid rgba($dark-blue, 0.1);
+  // }
+  // .modal-title{
+  //   color: $dark-blue;
+  // }
+  .button--submit{
+    float: right;
+  }
+  @media (max-width: 767px) {
+    .modal-header{
+      background: none;
+      border-bottom: 1px solid rgba($dark-blue, 0.1);
+    }
+    .modal-title{
+      color: $dark-blue;
+    }
+    .pathway-name-input{
+      max-width: 240px;
+      margin: 0 auto;
+    }
+    .form-group{
+      padding-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+MOBILE PATHWAYS
+--------------------------------------------------------------*/
+.mobile-pathway__groups,
+.current-path-holder{
+  display: none;
+}
+
+@media (min-width: 992px) and (max-width: 1384px) {
+  .pathway__occupation--start{
+    padding: 0 15px 10px 25px;
+    // .jobs-link{
+    //   display: none;
+    // }
+  }
+  .pathway__group{
+    padding-right: 40px;
+    &.has-active{
+      min-width: 0;
+    }
+  }
+  .pathway__occupation{
+    // height: auto;
+    .pathway__collapsed-occupations{
+      display: none !important;
+    }
+  }
+  .pathway__occupation-title{
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .pathway__collapse-btn,
+  .pathway__expand-btn{
+    left: 0;
+  }
+
+  .pathway{
+
+    &__group{
+
+      &.has-active{
+        min-width: 0;
+        padding-right: 40px;
+      }
+
+    }
+
+    &__occupation{
+      // padding: 0 15px 15px 25px;
+      
+      &--start{
+        .jobs-link{
+          display: none !important;
+        }
+      }
+
+      &-title{
+        height: 28px;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+    }
+
+    &__collapsed-occupations{
+      display: none !important;
+    }
+
+  }
+
+}// max-wdith: 1084px
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .container--pathways{
+    // max-width: 360px;
+    .col-md-3{
+      // display: block;
+      max-width: 100%  !important;
+      width: 100%  !important;
+      flex: auto  !important;
+    }
+  }
+
+  // .container--pathways .pathway__group{
+  //   min-width: 0 !important;
+  //   max-width: 290px !important;
+  //   &--start{
+  //     min-width: 323px !important;
+  //     max-width: 323px !important;
+  //   }
+  // }
+
+  // .pathway__group{
+  //   &:not(.pathway__group--start){
+  //     min-width: 325px;
+  //   }
+  // }
+
+}
+
+@media (min-width: 460px) and (max-width: 991px) {
+
+  .container--pathways{
+    // max-width: 360px;
+    max-width: 426px;
+  }
+
+}
+
+// @media (max-width: 1080px) {
+@media (max-width: 991px) {
+
+  .pathway__groups > .pathway__group:not(.pathway__group--start),
+  .pathway__progress{
+    display: none;
+  }
+
+  .pathway__collapsed-occupations{
+    display: none !important;
+  }
+
+  .container--pathways{
+    min-width: 0;
+  }
+
+  .current-path-holder.visible{
+    // display: flex;
+    .col{
+      &:before{
+        content: "";
+        display: block;
+        width: 10px;
+        height: calc(100% - 12px);
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        z-index: 10;
+        border-radius: 8px 0 0 8px;
+        background: $primary-colour;
+      }
+      &.has-2-occs{
+        &:before{
+          /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#536dfe+0,536dfe+6,50e3d4+50,50e3d4+58 */
+          background: #536dfe; /* Old browsers */
+          background: -moz-linear-gradient(top, #536dfe 0%, #536dfe 6%, #50e3d4 50%, #50e3d4 58%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(top, #536dfe 0%,#536dfe 6%,#50e3d4 50%,#50e3d4 58%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom, #536dfe 0%,#536dfe 6%,#50e3d4 50%,#50e3d4 58%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#536dfe', endColorstr='#50e3d4',GradientType=0 ); /* IE6-9 */
+        }
+      }
+      &.has-3-occs{
+        &:before{
+          /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#536dfe+0,536dfe+4,50e3d4+38,a888ff+72 */
+          background: #536dfe; /* Old browsers */
+          background: -moz-linear-gradient(top, #536dfe 0%, #536dfe 4%, #50e3d4 38%, #a888ff 72%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(top, #536dfe 0%,#536dfe 4%,#50e3d4 38%,#a888ff 72%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom, #536dfe 0%,#536dfe 4%,#50e3d4 38%,#a888ff 72%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#536dfe', endColorstr='#a888ff',GradientType=0 ); /* IE6-9 */
+        }
+      }
+      &.has-4-occs{
+        &:before{
+          /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#536dfe+0,536dfe+3,50e3d4+29,50e3d4+33,a888ff+54,a888ff+66,a888ff+66,f06292+80,f06292+100 */
+          background: #536dfe; /* Old browsers */
+          background: -moz-linear-gradient(top, #536dfe 0%, #536dfe 3%, #50e3d4 29%, #50e3d4 33%, #a888ff 54%, #a888ff 66%, #a888ff 66%, #f06292 80%, #f06292 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(top, #536dfe 0%,#536dfe 3%,#50e3d4 29%,#50e3d4 33%,#a888ff 54%,#a888ff 66%,#a888ff 66%,#f06292 80%,#f06292 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom, #536dfe 0%,#536dfe 3%,#50e3d4 29%,#50e3d4 33%,#a888ff 54%,#a888ff 66%,#a888ff 66%,#f06292 80%,#f06292 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#536dfe', endColorstr='#f06292',GradientType=0 ); /* IE6-9 */
+        }
+      }
+    }
+    .pathway__occupation{
+      &.collapsed{
+        margin-top: 12px;
+        &.pathway__occupation--1{
+          margin-top: 0;
+        }
+      }
+    }
+    .checked-circle{
+      display: block;
+      width: 28px;
+      height: 28px;
+      background: $primary-colour;
+      @include cssBorderRadius(50%);
+      @include cssBoxShadow(0, 2px, 4px, 0, #7B7FA3, 1);
+      position: absolute;
+      top: 32px;
+      left: 5px;
+      z-index: 11;
+      // overflow: hidden;
+      animation: pop 0.4s ease;
+      &:before{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: url('../img/pathways/checkmark_2x.png') center no-repeat;
+        background-size: 18px 13px;
+      }
+      &--2{
+        top: 192px;
+        background: $pathway-green;
+      }
+      &--3{
+        top: 360px;
+        background: $pathway-purple;
+      }
+      &--4{
+        top: 530px;
+        background: $pathway-pink;
+      }
+    }
+  }
+
+  .mobile-pathway__groups{
+    display: flex;
+    .pathway__group{
+      @include transitionMultiple(opacity 0.3s ease-in-out, transform 0.3s ease-in-out);
+      /* &--2.has-selected{
+        margin-top: 12px;
+      } */
+      &.has-active{
+        margin-top: 12px;
+      }
+    }
+    .pathway__occupation.shrink{
+      animation: mobilePathHide 0.3s forwards ease-in-out;
+    }
+    .pathway__group--4 .pathway__occupation-matches-btn{
+      display: none !important;
+    }
+  }
+
+  .pathway{
+
+    &__group{
+      transform: translate3d(0,0,0);
+      min-width: 0 !important;
+
+      &:before{
+        content: "";
+        width: 10px;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include cssBorderRadius(0);
+      }
+      
+      &:not(.pathway__group--start){
+        margin-left: 16px;
+        margin-right: 16px;
+        padding: 0;
+        @include cssBorderRadius(0 0 8px 8px);
+        @include cssBoxShadow(0, 2px, 4px, 0, #ABAECC, 1);
+      }
+
+      &--start{
+        padding-left: 16px !important;
+        padding-right: 13px;
+        z-index: 10;
+      }
+
+      &--2{
+        z-index: 9;
+        &:before{
+          background: rgba($primary-colour, 0.2);
+        }
+        .pathway__occupation{
+          &:before{
+            background: rgba($primary-colour, 0.2);
+          }
+          &.selected,
+          &.active,
+          &.expanded,
+          &.collapsed{
+            .pathway__plus-btn{
+              background: $pathway-green;
+              &:after{
+                // transform: rotate(90deg);
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+
+      &--3{
+        z-index: 8;
+        &:before{
+          background: rgba($pathway-green, 0.2);
+        }
+        .pathway__occupation{
+          &:before{
+            background: rgba($pathway-green, 0.2);
+          }
+          &.selected,
+          &.active,
+          &.expanded,
+          &.collapsed{
+            .pathway__plus-btn{
+              background: $pathway-purple;
+              &:after{
+                // transform: rotate(90deg);
+                opacity: 0;
+              }
+            }
+          }
+        }
+        .pathway__plus-btn{
+          &:before,
+          &:after{
+            background: $pathway-purple;
+          }
+        }
+      }
+
+      &--4{
+        z-index: 7;
+        &:before{
+          background: rgba($pathway-purple, 0.2);
+        }
+        .pathway__occupation{
+          &:before{
+            background: rgba($pathway-purple, 0.2);
+          }
+          &.selected,
+          &.active,
+          &.expanded,
+          &.collapsed{
+            .pathway__plus-btn{
+              background: $pathway-pink;
+              &:after{
+                // transform: rotate(90deg);
+                opacity: 0;
+              }
+            }
+          }
+          &.active{
+            &:before{
+              @include cssBorderRadius(0);
+            }
+            .pathway__plus-btn{
+              // background: #fff !important;
+              &:before{
+                background: #fff !important;
+                width: 15px;
+                height: 1px;
+                margin-top: 0;
+              }
+              // &:after{
+              //   opacity: 1 !important;
+              // }
+            }
+          }
+        }
+        .pathway__plus-btn{
+          &:before,
+          &:after{
+            background: $pathway-pink;
+          }
+        }
+      }
+
+    }
+
+    &__occupation{
+      margin-bottom: 0;
+      top: 0 !important;
+      left: 0 !important;
+      opacity: 1 !important;
+
+      &:not(.pathway__occupation--start){
+        padding: 1px 15px 7px 27px;
+        position: relative;
+        max-width: none;
+        height: auto;
+        // min-height: 88px;
+        clear: both;
+        @include cssBorderRadius(0);
+        filter: none;
+        &:before{
+          content: "";
+          width: 10px;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          // display: none;
+          @include cssBorderRadius(0);
+        }
+        .pathway__occupation-skill-overlap{
+          margin: 4px 0 -2px;
+        }
+        .pathway__occupation-title{
+          margin-bottom: 12px;
+        }
+        .jobs-link{
+          font-size: remCalc(12px);
+          color: #FF8A65;
+          letter-spacing: 0.44px;
+          text-transform: uppercase;
+          float: left;
+          margin-top: 16px;
+        }
+        .pathway__occupation-btn{
+          margin-top: 0;
+        }
+        .pathway__occupation-automation,
+        .pathway__occupation-salary,
+        .jobs-link{
+          display: none;
+        }
+      }
+
+      &.selected,
+      &.active,
+      &.expanded,
+      &.collapsed{
+        @include cssBoxShadow(0, 2px, 5px, 2px, #C3C5D5, 1);
+        float: left;
+        width: 100%;
+        background: #fff;
+        @include cssBorderRadius(0 8px 8px 0);
+        padding-top: 5px;
+        padding-bottom: 13px;
+        // margin-bottom: 10px;
+        z-index: 9;
+        &:after{
+          display: none !important;
+        }
+        .pathway__occupation-automation,
+        .pathway__occupation-salary,
+        .jobs-link{
+          display: block;
+        }
+        .pathway__occupation-title{
+          font-weight: 700;
+        }
+        .pathway__occupation-btn{
+          margin-top: 15px;
+        }
+        .pathway__plus-btn{
+          bottom: auto;
+          top: 19px;
+          &:before,
+          &:after{
+            background: #fff;
+          }
+        }
+        .pathway__divider{
+          display: none;
+        }
+        + .pathway__occupation{
+          padding-top: 10px;
+        }
+      }
+      &.selected{
+        animation: selectedPop 0.4s ease;
+      }
+      &.expanded,
+      &.active{
+        @include cssBorderRadius(8px 8px 8px 0);
+        &:before{
+          @include cssBorderRadius(8px 0 0 0);
+        }
+        .pathway__occupation-btn{
+          display: none !important;
+        }
+        .pathway__plus-btn{
+          &:before{
+            width: 16px;
+            height: 10px;
+            background: url('../img/pathways/chevron-down_2x.png') center no-repeat;
+            background-size: 16px 10px;
+            margin-top: 2px;
+          }
+        }
+      }
+      &.collapsed{
+        @include cssBorderRadius(8px);
+        &:before{
+          @include cssBorderRadius(8px 0 0 8px);
+        }
+        .pathway__occupation-btn{
+          display: none !important;
+        }
+        .pathway__plus-btn{
+          &:before{
+            width: 10px;
+            height: 16px;
+            background: url('../img/pathways/chevron-right_2x.png') center no-repeat;
+            background-size: 10px 16px;
+            margin-top: 0;
+            margin-left: 1px;
+          }
+        }
+      }
+
+      &--start{
+        @include cssBorderRadius(8px 8px 8px 0);
+        // @include cssDropShadow(0, 1px, 7px, #C3C5D5, 1);
+        @include cssBoxShadow(0, 1px, 7px, 3px, #C3C5D5, 1);
+        filter: none !important;
+        background: #fff;
+        padding: 6px 32px 12px 26px !important;
+        position: relative;
+        // overflow: hidden;
+        max-width: none;
+        height: 164px;
+        z-index: 10;
+        &:before{
+          content: "";
+          width: 10px;
+          height: 100%;
+          background: $primary-colour;
+          position: absolute;
+          top: 0;
+          left: 0;
+          @include cssBorderRadius(8px 0 0 0);
+        }
+        &:after{
+          display: block;
+          width: 35px;
+          height: 35px;
+          background: url('../img/pathways/mobile/search-blue-circle_2x.png') center no-repeat;
+          background-size: 35px;
+          position: absolute;
+          top: 20px;
+          left: -13px;
+          border: none;
+        }
+        .pathway__occupation-salary{
+          margin-top: 6px;
+        }
+        .jobs-link{
+          display: block;
+          margin-top: 18px;
+        }
+        &.selected,
+        &.active,
+        &.collapsed{
+          z-index: 10;
+          .pathway__occupation-automation{
+            margin-top: 15px;
+          }
+          .pathway__start-path-btn{
+            margin-top: 15px;
+            margin-right: 0;
+          }
+        }
+        &.collapsed{
+          .start-new-path{
+            &__search{
+              width: 28px;
+              height: 28px;
+              background: $primary-colour;
+              @include cssBorderRadius(50%);
+              @include cssBoxShadow(0, 2px, 4px, 0, #7B7FA3, 1);
+              top: 23px;
+              left: -9px;
+              text-align: center;
+              &:before{
+                content: "";
+                display: inline-block;
+                width: 10px;
+                height: 16px;
+                background: url('../img/pathways/chevron-right_2x.png') center no-repeat;
+                background-size: 10px 16px;
+                margin-top: 6px;
+                margin-left: 1px;
+              }
+            }
+          }
+        }
+      }
+
+      &--1{
+        padding-top: 10px !important;
+        &.selected{
+          margin-top: 12px;
+        }
+      }
+
+      &--5{
+        @include cssBorderRadius(0 0 8px 8px !important);
+        &:before{
+          @include cssBorderRadius(0 0 0 8px !important);
+        }
+        .pathway__divider{
+          display: none;
+        }
+      }
+
+    }
+
+    &__plus-btn
+    &__divider{
+      display: block;
+    }
+
+    &__plus-btn{
+      display: block;
+      width: 28px;
+      height: 28px;
+      position: absolute;
+      // top: 30px;
+      bottom: 52px;
+      left: -9px;
+      text-indent: -9999px;
+      overflow: hidden;
+      cursor: default;
+      background: #fff;
+      @include cssBorderRadius(50%);
+      @include cssBoxShadow(0, 2px, 4px, 0, #7B7FA3, 1);
+      &:before,
+      &:after{
+        content: "";
+        display: block;
+        width: 15px;
+        height: 1px;
+        background: $pathway-green;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include centreAlign();
+      }
+      &:after{
+        width: 1px;
+        height: 15px;
+      }
+    }
+
+    &__divider{
+      display: block;
+      width: 92%;
+      height: 1px;
+      background: #e8eaf0;
+      position: absolute;
+      left: 8%;
+      bottom: 0;
+    }
+
+    &__expand-btn,
+    &__collapse-btn{
+      display: none !important;
+    }
+
+  }
+
+  .start-new-path__search{
+    display: block;
+  }
+
+  .pathway__group.is-last{
+    .pathway__occupation.shrink{
+      animation: none !important;
+    }
+  }
+  
+}// end (max-width: 1080px)
+
+.mobile-pathway__start-path-btn{
+  float: right;
+  margin-right: 6px;
+}
+
+#mobile-start-pathway-autocomplete{
+  .start-pathway-autocomplete{
+    max-width: calc(100vw - 104px) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .container--pathways{
+    padding-top: 12px;
+    min-height: 1006px;
+  }
+  .page-heading--pathways{
+    display: none;
+  }
+  .pathways{
+    &__actions-btns{
+      margin-bottom: 13px;
+    }
+    &__actions{
+      padding: 0 8px;
+    }
+  }
+  .view-active-pathway{
+    display: block;
+    width: 39px;
+    min-width: 0;
+    float: right;
+    background: url('../img/pathways/mobile/pathway-glance_2x.png') center no-repeat;
+    background-size: 39px 19px;
+    text-indent: 9999px;
+    overflow: hidden;
+    border: none;
+    &.active{
+      background: url('../img/pathways/mobile/pathway-glance-active_2x.png') center no-repeat;
+      background-size: 39px 19px;
+    }
+  }
+  .save-pathway-popup{
+    font-size: remCalc(14px);
+    border: none;
+    padding: 13px 16px;
+    min-width: 0;
+    &:after{
+      content: " Path";
+    }
+  }
+}

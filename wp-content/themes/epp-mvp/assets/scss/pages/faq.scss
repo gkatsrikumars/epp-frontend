@@ -1,0 +1,225 @@
+/*--------------------------------------------------------------
+FAQ PAGE
+--------------------------------------------------------------*/
+.page-template-page-faq{
+  #page-wrapper{
+    @media #{$tablet} {
+      overflow: visible;// for position sticky to work on '.faq__nav ul'
+    }
+  }
+}
+
+.page-heading--faq{
+  @media (max-width: 768px) {
+    font-size: 0;
+    text-indent: -26px;
+    &:after{
+      content: "FAQs";
+      font-size: remCalc(30px);
+      text-transform: uppercase;
+    }
+  }
+}
+
+.faq{
+  &__heading,
+  &__collapse-btn{
+    font-family: $body-font;
+    font-size: remCalc(14px);
+    font-weight: normal;
+    letter-spacing: 0.4px;
+    line-height: 40px;
+    color: rgba($dark-blue, 0.4);
+    text-transform: uppercase;
+    padding: 0 0 0 60px;
+    margin: 0;
+  }
+  &__nav{
+    position: relative;
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 29px 0 29px 26px;
+      position: sticky;
+      top: 120px;
+      left: 0;
+      li{
+        line-height: 47px;
+        @include transitionAll(0.3s, ease);
+        &.active{
+          text-indent: 23px;
+          a{
+            color: $primary-colour;
+          }
+          &:after{
+            content: "\2022";
+            color: $primary-colour;
+          }
+        }
+        a{
+          letter-spacing: 0.4px;
+          font-weight: 500;
+          font-size: remCalc(14px);
+          color: rgba($dark-blue, 0.6);
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  &__collapse-btn{
+    display: block;
+    color: rgba($dark-blue, 0.6);
+    font-weight: 500;
+    padding: 0;
+    line-height: 47px;
+    border-bottom: 1px solid rgba($dark-blue, 0.1);
+    position: relative;
+    &:after{
+      content: "";
+      display: block;
+      width: 17px;
+      height: 17px;
+      background: url('../img/down-chevron-grey_2x.png') center no-repeat;
+      background-size: 17px 9px;
+      position: absolute;
+      top: 15px;
+      right: 27px;
+    }
+    &.active{
+      color: $primary-colour;
+      border-bottom: 1px solid transparent;
+      &:after{
+        background: url('../img/delete-x-blue_2x.png') center no-repeat;
+        background-size: 16px;
+      }
+    }
+  }
+}
+
+.accordion-wrapper{
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.accordion{
+  background: #fff;
+  @include cssBoxShadow(0, 2px, 5px, 2px, #D5D6DF, 0.5);
+  padding-top: 37px;
+  margin-bottom: 55px;
+  .card{
+    @include cssBorderRadius(0);
+    border: none;
+    &:last-child{
+      .accordion__heading{
+        &:after{
+          display: none;
+        }
+      }
+    }
+  }
+  .btn-link{
+    color: $dark-blue;
+    font-family: $body-font;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+  }
+
+  &__heading{
+    padding: 0 0 0 60px;
+    background: #fff;
+    border-bottom: none;
+    position: relative;
+    &:after{
+      content: "";
+      display: block;
+      width: calc(100% - 60px);
+      height: 1px;
+      background: rgba($dark-blue, 0.08);
+      position: absolute;
+      left: 60px;
+      bottom: 1px;
+    }
+    h2{
+      // border-bottom: 1px solid rgba($dark-blue, 0.08);
+      // line-height: 80px;
+      line-height: 1;
+      position: relative;
+      // padding-right: 60px;
+      padding: 0;
+      button{
+        width: 100%;
+        height: 100%;
+        // padding: 0;
+        text-align: left;
+        // line-height: 80px;
+        // padding-right: 60px;
+        padding: 28px 60px 28px 0;
+        &:hover{
+          text-decoration: none;
+          color: $primary-colour;
+        }
+        &:active{
+          text-decoration: none;
+        }
+        &:after{
+          content: "";
+          display: block;
+          width: 16px;
+          height: 16px;
+          position: absolute;
+          top: 34px;
+          right: 30px;
+          float: right;
+          // margin-top: 34px;
+          // margin-right: 30px;
+          background: url('../img/plus_2x.png') center no-repeat;
+          background-size: 16px;
+        }
+        &[aria-expanded="true"]{
+          color: $primary-colour;
+          text-decoration: none;
+          // margin-bottom: -18px;
+          &:after{
+            background: url('../img/minus_2x.png') center no-repeat;
+            background-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  &__body{
+    padding: 30px 30px 30px 60px;
+    font-size: 1rem;
+    color: $grey;
+    color: rgba($dark-blue, 0.6);
+    letter-spacing: 0.44px;
+    line-height: 28px;
+    background: #fff;
+  }
+
+  // .collapse{
+  //   position: relative;
+  //   &:before{
+  //     content: "";
+  //     display: block;
+  //     width: calc(100% - 60px);
+  //     height: 1px;
+  //     background: rgba($dark-blue, 0.08);
+  //     position: absolute;
+  //     left: 60px;
+  //     top: 1px;
+  //   }
+  // }
+}
+
+.footnotes{
+  font-size: remCalc(10px);
+  color: $grey;
+  color: rgba($dark-blue, 0.6);
+  li:target{
+    color: $dark-blue;
+  }
+}

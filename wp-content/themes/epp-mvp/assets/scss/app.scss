@@ -1,0 +1,71 @@
+/* HELPERS */
+@import "helpers/functions";
+@import "helpers/variables";
+@import "helpers/mixins";
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Vendor Pages
+2.0 Global Styles
+	Global
+	Header
+	Footer
+	Mobile Menu
+	Forms
+3.0 Pages
+4.0 Effects
+5.0 Animations
+6.0 Media Queries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 VENDOR STYLES
+--------------------------------------------------------------*/
+@import "vendor/fontawesome/scss/all";
+@import "vendor/datepicker";
+@import "vendor/jquery-ui";
+@import "../../node_modules/bootstrap-scss/bootstrap";
+
+/*--------------------------------------------------------------
+2.0 GLOBAL STYLES
+--------------------------------------------------------------*/
+@import "layout/global";
+@import "layout/typography";
+/* @import "layout/wp-core"; */
+
+@import "components/forms";
+@import "components/header";
+@import "components/footer";
+@import "components/mobile-menu";
+
+/*--------------------------------------------------------------
+3.0 PAGES
+--------------------------------------------------------------*/
+@import "pages/all-pages";
+@import "pages/home";
+@import "pages/about";
+/* @import "pages/contact"; */
+@import "pages/profile";
+@import "pages/bookmarks";
+@import "pages/saved-pathways";
+@import "pages/occupation";
+@import "pages/pathways";
+@import "pages/faq";
+@import "pages/404";
+
+/*--------------------------------------------------------------
+4.0 EFFECTS
+--------------------------------------------------------------*/
+@import "helpers/effects";
+
+/*--------------------------------------------------------------
+5.0 ANIMATIONS
+--------------------------------------------------------------*/
+@import "vendor/animate-css";
+@import "helpers/animations";
+
+/*--------------------------------------------------------------
+6.0 MEDIA QUERIES
+--------------------------------------------------------------*/
+@import "layout/media-queries";

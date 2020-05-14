@@ -1,0 +1,208 @@
+.container--bookmarks{
+  padding-top: 45px;
+  padding-bottom: 36px;
+  @media #{$tablet} {
+    min-height: calc(100vh - 376px);
+    padding-top: 50px;
+    padding-bottom: 90px;
+  }
+  .page-heading{
+    margin-bottom: 20px;
+    @media #{$tablet} {
+      margin-top: 54px;
+      margin-bottom: 61px;
+    }
+  }
+  /* .page-heading{
+    margin-top: 42px;
+    margin-bottom: 33px;
+  } */
+}
+
+.bookmarked-occupation{
+  @include cssBoxShadow(0,2px,5px, 2px,#D5D6DF,0.5);
+  margin: 0 -7px 12px;
+  background: #fff;
+  padding: 8px 0 14px;
+  position: relative;
+  @media #{$tablet} {
+    padding: 33px 65px 20px;
+    margin: 0 -15px 15px;
+  }
+
+  &__info{
+    p{
+      color: $grey;
+      color: rgba(#061945, 0.6);
+      font-size: remCalc(14px);
+      line-height: remCalc(22px);
+      margin-bottom: 17px;
+      @media #{$tablet} {
+        font-size: 1rem;
+        line-height: remCalc(28px);
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__title{
+    font-family: $heading-font;
+    font-size: remCalc(20px);
+    font-weight: 700;
+    letter-spacing: 0.55px;
+    line-height: 36px;
+    margin: 0 0 4px;
+    padding: 0;
+    color: $dark-blue;
+    @media #{$tablet} {
+      font-size: remCalc(24px);
+      letter-spacing: 0.66px;
+      line-height: 40px;
+      margin: 0 0 7px;
+    }
+  }
+
+  &__start-path{
+    clear: both;
+    text-align: right;
+    margin-bottom: 57px;
+  }
+
+  &__automation{
+    float: right;
+    span{
+      display: block;
+      float: right;
+      font-size: remCalc(14px);
+      font-weight: 500;
+      color: $grey;
+      color: rgba($dark-blue, 0.6);
+      text-transform: lowercase;
+      width: 80px;
+      line-height: 23px;
+      letter-spacing: 0.39px;
+    }
+  }
+
+  &__risk-percent{
+    display: block;
+    float: left;
+    font-style: normal;
+    font-family: $heading-font;
+    font-size: remCalc(54px);
+    font-weight: 600;
+    line-height: 40px;
+    // line-height: 48px;
+    letter-spacing: 1.2px;
+    margin-right: 7px;
+  }
+
+  &__start-path-btn{
+    // padding: 13px 18px;
+    padding: 14px 21px;
+    min-width: 150px;
+    &:hover{
+      @include cssGradient($primary-colour, none, $pathway-green, horizontal);
+    }
+    // @media #{$tablet} {
+    //   padding: 14px 21px;
+    //   min-width: 150px;
+    // }
+  }
+
+  &__read-more{
+    p{
+      text-align: center;
+      margin-bottom: 0;
+    }
+    .d-md-none{
+      .bookmarked-occupation__start-path-btn{
+        float: right;
+        margin-right: -7px;
+      }
+      .bookmarked-occupation__read-more-link{
+        display: block;
+        float: left;
+        margin-top: 8px;
+        &:after{
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__read-more-link{
+    text-transform: uppercase;
+    font-size: remCalc(14px);
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    color: $primary-colour;
+    margin-top: 10px;
+    letter-spacing: 0.39px;
+    &:after{
+      content: "";
+      // display: block;
+      display: inline-block;
+      width: 18px;
+      height: 10px;
+      background: url('../img/down-chevron_2x.png') center no-repeat;
+      background-size: auto 7px;
+      // margin: 0 auto;
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+      // margin-left: 5px;
+      position: relative;
+      left: 0;
+      @include transitionType(left, 0.2s, ease-in-out);
+    }
+    &:hover{
+      color: $hover-blue;
+      text-decoration: none;
+      &:after{
+        left: 5px;
+      }
+    }
+  }
+
+  &__delete-btn{
+    display: block;
+    width: 19px;
+    height: 19px;
+    text-indent: -9999px;
+    overflow: hidden;
+    background: url('../img/delete-x_2x.png') center no-repeat;
+    background-size: 19px;
+    margin-top: 3px;
+    margin-right: -7px;
+    margin-bottom: 27px;
+    float: right;
+    &:hover{
+      opacity: 0.7;
+    }
+    @media #{$tablet} {
+      float: none;
+      margin-top: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__risk--mobile{
+    font-size: remCalc(12px);
+    margin-top: -3px;
+    em{
+      font-style: normal;
+    }
+    span{
+      text-transform: lowercase;
+      color: $grey;
+      color: rgba($dark-blue, 0.6);
+      letter-spacing: 0.33px;
+    }
+  }
+}
+
+.button--delete-bookmark{
+  @extend .button--confirm-delete;
+}
